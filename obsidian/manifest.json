@@ -1,0 +1,14 @@
+{
+  "id": "copilot-ignis",
+  "name": "Copilot for Ignis",
+  "version": "4.0.15-ignis.1",
+  "minAppVersion": "1.11.4",
+  "isDesktopOnly": false,
+  "description": "Ignis fork of Copilot (AGPL-3.0, based on Logan Yang's obsidian-copilot): agent chat in the sidebar, with ACP agents spawned server-side by the ignis-agent-gateway plugin instead of in-browser.",
+  "author": "Logan Yang",
+  "authorUrl": "https://twitter.com/logancyang",
+  "fundingUrl": {
+    "Buy Me a Coffee": "https://www.buymeacoffee.com/logancyang",
+    "GitHub Sponsor": "https://github.com/sponsors/logancyang"
+  }
+}
