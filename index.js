@@ -63,6 +63,12 @@ module.exports = {
     "Runs ACP coding agents (opencode) as server-side processes and relays ACP frames to browser plugins over WebSocket",
   version: "0.1.0",
 
+  // Browser companion (Copilot for Ignis): discovery reads obsidian/manifest.json
+  // from here, serves obsidian/dist/ statically, and ships the plugin as a
+  // virtual plugin to vaults that enable this server plugin. Without this
+  // field the companion never reaches the browser.
+  obsidianPlugin: path.join(__dirname, "obsidian"),
+
   _relay: null,
 
   async register(ctx) {
