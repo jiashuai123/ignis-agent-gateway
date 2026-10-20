@@ -47,6 +47,20 @@ browser. `cwd` is always the vault directory; there is no flag to widen it.
 
 `GET /api/ext/ignis-agent-gateway/status` lists running children.
 
+## Behind a reverse proxy
+
+Plugin data files (Copilot settings + chat history) grow past 1 MB, and
+nginx rejects larger request bodies by default (`413 Request Entity Too
+Large`), which surfaces as "change could not be saved after repeated
+retries" in the Ignis status bar. Raise the limit for the Ignis location:
+
+```nginx
+client_max_body_size 64m;
+```
+
+The Ignis server itself accepts up to 50 MB per write (`maxBodyBytes`,
+configurable 1-500 MB via server settings).
+
 ## Security
 
 The agent is a coding agent: it can run arbitrary commands on the server,
